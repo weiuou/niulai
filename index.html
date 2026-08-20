@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#10141d">
+  <link rel="icon" href="data:,">
+  <title>牛来：牛市接接乐</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="game-shell" aria-label="牛来：牛市接接乐">
+    <canvas id="game" width="360" height="640" aria-label="游戏画面"></canvas>
+    <section id="start-screen" class="screen start-screen">
+      <p class="eyebrow">A 股玄学模拟器</p>
+      <h1>牛来：<br><em>牛市接接乐</em></h1>
+      <p class="intro">左右移动牛来，接住<span class="up">红涨</span>，躲开<span class="down">绿跌</span>。</p>
+      <button id="start-button" class="primary-button">开盘！</button>
+      <p class="hint">键盘 ← → / A D · 手机横向拖动</p>
+    </section>
+    <section id="result-screen" class="screen result-screen" hidden>
+      <p class="eyebrow">今日收盘</p>
+      <h2 id="result-title">牛来本人</h2>
+      <p id="result-copy" class="result-copy"></p>
+      <dl class="stats">
+        <div><dt>最终分数</dt><dd id="result-score">0</dd></div>
+        <div><dt>最高连涨</dt><dd id="result-combo">x0</dd></div>
+        <div><dt>牛市触发</dt><dd id="result-bull">0 次</dd></div>
+        <div><dt>本机最高</dt><dd id="result-high">0</dd></div>
+      </dl>
+      <button id="restart-button" class="primary-button">再接一把</button>
+      <div class="button-row"><button id="challenge-button" class="secondary-button">挑战 10000 点</button><button id="share-button" class="secondary-button">生成分享图</button></div>
+    </section>
+    <section id="share-card-panel" class="share-card-panel" hidden aria-label="分享图预览">
+      <p class="eyebrow">分享战报</p>
+      <canvas id="share-card-canvas" width="1080" height="1440" aria-label="生成的分享图"></canvas>
+      <div class="share-card-actions"><button id="save-card-button" class="primary-button">保存到本地</button><button id="close-card-button" class="secondary-button">返回结算</button></div>
+    </section>
+    <button id="mute-button" class="mute-button" type="button" aria-pressed="false" aria-label="切换音效">♫</button>
+  </main>
+  <footer>非官方同人娱乐作品，不代表或暗示任何官方合作；不构成投资建议。</footer>
+  <audio id="bgm" preload="metadata" src="./assets/audio/china-can-fly.mp3"></audio>
+  <script src="./game.js"></script>
+</body>
+</html>

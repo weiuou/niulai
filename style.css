@@ -1,0 +1,26 @@
+:root { color-scheme: dark; font-family: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif; background:#10141d; }
+* { box-sizing:border-box; }
+body { margin:0; min-height:100dvh; display:grid; place-items:center; overflow:hidden; overscroll-behavior:none; background:radial-gradient(circle at 50% 0,#29374b,#10141d 58%); color:#fff; touch-action:none; }
+.game-shell { position:relative; width:min(100vw, 480px, calc((100dvh - 45px) * .5625)); aspect-ratio:9/16; overflow:hidden; background:#19202e; box-shadow:0 18px 60px #000a; }
+canvas { width:100%; height:100%; display:block; image-rendering:auto; }
+.screen { position:absolute; inset:0; z-index:2; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:24px; text-align:center; background:linear-gradient(#09122394,#10141de8); backdrop-filter:blur(2px); }
+.screen[hidden] { display:none; }
+.share-card-panel { position:absolute; inset:0; z-index:5; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:16px; background:#060910ed; }
+.share-card-panel[hidden] { display:none; }
+.share-card-panel #share-card-canvas { width:min(76vw, 285px); height:auto; max-height:calc(100% - 104px); aspect-ratio:3/4; border:1px solid #ffd36b; box-shadow:0 8px 28px #000b; }
+.share-card-actions { display:flex; gap:10px; align-items:center; justify-content:center; }.share-card-actions .primary-button { min-width:auto; padding:10px 18px; font-size:15px; }
+.start-screen { background:linear-gradient(180deg,#0c1627a8,#10141dd9), url('./assets/backgrounds/normal-market.png') center/cover; }
+.eyebrow { margin:0 0 10px; color:#ffc75c; font-size:12px; letter-spacing:.18em; font-weight:800; }
+h1 { margin:0; font-size:clamp(36px,10vw,52px); line-height:1.03; text-shadow:0 3px 0 #5f1a11,0 8px 26px #000; }
+h1 em { color:#ff4e45; font-style:normal; }
+.intro { margin:24px 0 18px; font-weight:700; }.up{color:#ff5c55}.down{color:#7bd86d}
+button { border:0; color:inherit; font:inherit; font-weight:900; cursor:pointer; touch-action:manipulation; }
+.primary-button { min-width:180px; padding:14px 26px; border-radius:999px; color:#fff; background:linear-gradient(135deg,#ff5d45,#d72c22); box-shadow:0 5px 0 #741a16,0 11px 23px #0008; font-size:19px; }
+.primary-button:active { transform:translateY(3px); box-shadow:0 2px 0 #741a16,0 7px 15px #0008; }
+.hint { margin-top:20px; font-size:12px; color:#d5dce8; }.result-screen { background:linear-gradient(#111928e6,#281511ee),url('./assets/backgrounds/bull-market.png') center/cover; }
+.result-screen h2 { margin:2px 0 8px; color:#ffcf62; font-size:34px; text-shadow:0 2px 0 #6f260e; }.result-copy { max-width:290px; min-height:42px; margin:0 0 16px; color:#e9edf3; line-height:1.5; }
+.stats { width:min(100%,330px); display:grid; grid-template-columns:1fr 1fr; margin:0 0 20px; border:1px solid #ffffff2e; border-radius:16px; overflow:hidden; background:#0d1329a8; }.stats div { padding:10px 8px; border:1px solid #ffffff18; }.stats dt { font-size:11px;color:#bac4d4; }.stats dd { margin:2px 0 0; font-size:19px;font-weight:900;color:#fff; }
+.button-row { display:flex; gap:8px; margin-top:15px; }.secondary-button { padding:9px 13px; border-radius:999px; background:#ffffff1b; border:1px solid #ffffff3d; font-size:13px; }.mute-button { position:absolute; z-index:4; right:10px; bottom:10px; width:34px; height:34px; border-radius:50%; background:#10141daa; border:1px solid #ffffff3d; }
+footer { position:fixed; bottom:4px; max-width:95vw; color:#aeb7c6; font-size:10px; text-align:center; }
+@media (max-height:680px) { footer { display:none; } .start-screen{padding:14px}.result-screen{padding:10px}.stats div{padding:7px}.result-copy{margin-bottom:8px}.button-row{margin-top:9px} }
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; transition-duration:.01ms!important; } }
